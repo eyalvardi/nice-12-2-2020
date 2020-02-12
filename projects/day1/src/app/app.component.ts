@@ -45,7 +45,9 @@ import {Component} from '@angular/core';
             </div>-->
             
         </div>
-
+        <div>
+            <nice-game></nice-game>
+        </div>
     `,
     styles: [`
         .demo1 {

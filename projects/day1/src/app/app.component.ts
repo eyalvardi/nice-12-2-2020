@@ -15,7 +15,7 @@ import {Component} from '@angular/core';
              [style.border]="count +'px solid green'">
 
             <h1 [id]="title.length + 5" (click)="toggle('demo1',$event)">
-                Day1 Nice {{title.length + 5}}
+                Day1 Nice value: {{title}}
             </h1>
             <button (click)="toggle('demo1')">demo1</button>
             <button (click)="toggle('demo2')">demo2</button>
@@ -23,9 +23,12 @@ import {Component} from '@angular/core';
         </div>
         <div>
             <h1> Counter demo</h1>
-            <nice-counter 
-                    [step]="3"
-                    [value]="100">                
+            <nice-counter
+                    (xxxChange) = "title = $event.toString()"
+                    [max]  = "110"
+                    [min]  = "97"
+                    [step] = "3"
+                    [value]= "100">                
             </nice-counter>
         </div>
 

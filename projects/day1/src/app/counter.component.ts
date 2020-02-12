@@ -3,13 +3,24 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'nice-counter',
   template: `
+      
     <div [ngClass]="vsm">
       
       <pre>
         {{ vsm | json}}
       </pre>
       
-      <button (click)="increase()" [class.error]="value > max">+</button>
+      <!--<ng-template  [ngIf]="!isMax">
+        <button (click)="increase()" [class.error]="value > max">+</button>
+      </ng-template>-->
+      <ng-template #maxElse>
+        <button>else</button>
+      </ng-template>
+      
+      <button (click)="increase()"
+              *ngIf="!isMax ; else maxElse"
+              [class.error]="value 
+              > max">+</button>
       <span>{{value}}</span>
       <button (click)="decrease()" [class.error]="value < min">-</button>
     </div>
@@ -41,6 +52,8 @@ export class CounterComponent implements OnInit {
   get vsm(){
     return {...this._vsm};
   }
+
+  get isMax(){ return this.value > this.max; }
 
   constructor() { }
 

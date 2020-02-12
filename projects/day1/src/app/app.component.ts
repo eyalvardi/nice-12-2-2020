@@ -1,32 +1,66 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  template: `
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center" class="content">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
-      <span style="display: block">{{ title }} app is running!</span>
-      <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    </div>
-    <h2>Here are some links to help you start: </h2>
-    <ul>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-      </li>
-    </ul>
-    
-  `,
-  styles: []
+    selector: 'app-root',
+    template: `
+        <!--<div
+                [class.demo1]="demo1"
+                [class.demo2]="demo2"
+                [class.demo3]="demo3">-->
+        <div [ngClass]="devClasses" 
+             [ngStyle]="{
+                border : count +'px solid green',
+                backgroundColor: 'blue'
+             }" 
+             [style.border]="count +'px solid green'">
+
+            <h1 [id]="title.length + 5" (click)="toggle('demo1',$event)">
+                Day1 Nice {{title.length + 5}}
+            </h1>
+            <button (click)="toggle('demo1')">demo1</button>
+            <button (click)="toggle('demo2')">demo2</button>
+            <button (click)="toggle('demo3')">demo3</button>
+        </div>
+        <div>
+            <h1> Counter demo</h1>
+            <nice-counter 
+                    [step]="3"
+                    [value]="100">                
+            </nice-counter>
+        </div>
+
+    `,
+    styles: [`
+        .demo1 {
+            background-color: yellow;
+        }
+
+        .demo2 {
+            border: 2px solid red;
+        }
+
+        .demo3 {
+            background-color: darkgray;
+        }
+    `]
 })
 export class AppComponent {
-  title = 'day1';
+    title = 'day1';
+    count = 0;
+    _classes = {
+      'demo1' : true,
+      'demo2' : true,
+      'demo3' : true,
+    };
+    demo1Val = true;
+    demo2Val = true;
+    demo3Val = true;
+
+    get devClasses (){
+      return this._classes;
+    }
+    toggle(clas:string,...args){
+      this.count++;
+      return this._classes[clas] = !this._classes[clas];
+    }
 }

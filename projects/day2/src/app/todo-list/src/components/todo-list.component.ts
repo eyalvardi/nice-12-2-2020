@@ -12,7 +12,8 @@ import {TodoListService} from "../services/todo-list.service";
       <div class="task-header">
         <h4>Todo List Demo</h4>
         <input type="text"  #desc>
-        <button (click)="ctrl.addTask(desc.value)">Add Task</button>
+        <button mat-raised-button color="primary"
+            (click)="ctrl.addTask(desc.value)">Add Task</button>
       </div>
       <div >
         <nice-task-item 

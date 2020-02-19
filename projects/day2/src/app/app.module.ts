@@ -5,10 +5,15 @@ import {GameModule} from './game/game.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TodoListModule} from "./todo-list";
+import { MyTableComponent } from './my-table/my-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
     declarations: [
         AppComponent,
+        MyTableComponent,
     ],
     imports: [
         BrowserModule,
@@ -16,7 +21,10 @@ import {TodoListModule} from "./todo-list";
 
         // My Modules
         GameModule,
-        TodoListModule
+        TodoListModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule
     ],
     providers: [],
     bootstrap: [AppComponent]

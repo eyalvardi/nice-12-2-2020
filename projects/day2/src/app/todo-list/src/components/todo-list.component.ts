@@ -4,9 +4,9 @@ import {TaskItem} from "../models/task-item.class";
 @Component({
   selector: 'nice-todo-list',
   template: `
-    <div>
-      <div class="header">
-        <h3>Todo List Demo</h3>
+    <div class="todo-list-layout">
+      <div class="task-header">
+        <h4>Todo List Demo</h4>
         <input type="text"  #desc>
         <button (click)="addTask(desc.value)">Add Task</button>
       </div>
@@ -15,10 +15,9 @@ import {TaskItem} from "../models/task-item.class";
           <input type="checkbox" 
                  (change)="setDone(task,$event)"
                  [checked]="task.isDone">
-          <span class="desc">{{task.desc}}</span>
+          <span class="task-desc">{{task.desc}}</span>
           <button (click)="removeTask(task)">x</button>
-        </ng-container>
-        
+        </ng-container>        
       </div>
       <div class="tasks-status">
         Total : <span> {{totalIsDone}} / {{tasks.length}}</span>

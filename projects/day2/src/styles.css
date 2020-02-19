@@ -2,3 +2,27 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.todo-list-layout{
+    display: grid;
+    grid-template-rows: 120px auto 30px;
+    grid-gap: 12px;
+    height: 85vh;
+    width: 90%;
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid darkgray;
+}
+.tasks-list{
+    display: grid;
+    grid-template-columns: 30px auto 25px;
+    place-items: center;
+    grid-auto-rows: 35px;
+    grid-gap: 12px;
+    width: 90%;
+    margin: 8px;
+    padding: 8px;
+}
+.task-desc{
+    justify-self: start;
+}

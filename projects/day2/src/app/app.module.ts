@@ -17,8 +17,6 @@ import {TodoListModule} from "./todo-list";
         // My Modules
         GameModule,
         TodoListModule
-
-
     ],
     providers: [],
     bootstrap: [AppComponent]

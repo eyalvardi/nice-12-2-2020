@@ -53,8 +53,13 @@ import {Component, Input, OnInit} from '@angular/core';
     `]
 })
 export class UserComponent implements OnInit {
+    _user = null;
+    @Input('source')
+    set user(val){
+        this._user = val;
+    }
+    get user(){ return this._user; }
 
-    @Input('source') user;
     @Input() userNo: number;
 
     constructor() {

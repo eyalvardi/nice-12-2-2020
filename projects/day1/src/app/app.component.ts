@@ -4,14 +4,11 @@ import {Component} from '@angular/core';
     selector: 'app-root',
     template: `
         <!--<div
-                [class.demo1]="demo1"
-                [class.demo2]="demo2"
-                [class.demo3]="demo3">-->
-        <div [ngClass]="devClasses" 
-             [ngStyle]="{
-                border : count +'px solid green',
-                backgroundColor: 'blue'
-             }" 
+            [class.demo1]="demo1"
+            [class.demo2]="demo2"
+            [class.demo3]="demo3">
+         -->
+        <div [ngClass]="devClasses"
              [style.border]="count +'px solid green'">
 
             <h1 [id]="title.length + 5" (click)="toggle('demo1',$event)">
@@ -21,7 +18,7 @@ import {Component} from '@angular/core';
             <button (click)="toggle('demo2')">demo2</button>
             <button (click)="toggle('demo3')">demo3</button>
         </div>
-        <div>
+        <!--<div>
             <h1> Counter demo</h1>
             <nice-counter
                     (xxxChange) = "title = $event.toString()"
@@ -30,8 +27,8 @@ import {Component} from '@angular/core';
                     [step] = "3"
                     [value]= "100">                
             </nice-counter>
-        </div>
-        <div>
+        </div>-->
+       <!-- <div>
             <h3>*ngFor</h3>
             
             <nice-user 
@@ -39,15 +36,15 @@ import {Component} from '@angular/core';
                 [source]="user"
                 [userNo]="i"
             ></nice-user>
-            <!--<div *ngFor="let user of users;index as i;last as l">
+            &lt;!&ndash;<div *ngFor="let user of users;index as i;last as l">
                 <img [src]="user.picture.thumbnail">
                 <span>{{i}} - {{user.name.first}} {{user.name.last}}</span>
-            </div>-->
+            </div>&ndash;&gt;
             
-        </div>
-        <div>
+        </div>-->
+        <!--<div>
             <nice-game></nice-game>
-        </div>
+        </div>-->
     `,
     styles: [`
         .demo1 {

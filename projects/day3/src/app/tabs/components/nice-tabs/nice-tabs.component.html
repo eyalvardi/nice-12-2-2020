@@ -1,0 +1,25 @@
+<div class="tabs">
+    <div class="tab" *ngFor="let tab of tabs;index as i"
+         [class.active]="tab.active"
+         (click)="setActiveTab(tab)"
+        >
+        <ng-container *ngIf="titleTemp;else noTitleTemp">
+            <ng-container *ngIf="i % 2 != 0;">
+                <ng-container *ngTemplateOutlet="titleTemp;context:{tab:tab,index:i}"></ng-container>
+            </ng-container>
+            <ng-container *ngIf="i % 2 == 0">
+                <ng-container *ngTemplateOutlet="titleTempEven;context:{tab:tab,index:i}"></ng-container>
+            </ng-container>
+        </ng-container>
+
+        <ng-template  #noTitleTemp>
+            {{tab.title}}
+        </ng-template>
+
+    </div>
+</div>
+<div class="panel">
+    <ng-content></ng-content>
+</div>
+
+

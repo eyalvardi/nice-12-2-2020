@@ -7,7 +7,32 @@ import { tap } from "rxjs/operators";
   template: `
    <div>
      <h2>Day 3 NICE !!!!</h2>
-     <app-demo></app-demo>
+     
+     <nice-tabs>
+       <ng-template #titleTemp let-t="tab" let-i="index">
+         <div>
+           <span>({{i}}) - </span>
+           <strong>{{t.title}}</strong>
+         </div>
+       </ng-template>
+       <ng-template #titleTempEven let-t="tab" let-i="index">
+         <div>
+           <strong>!!! :-) {{t.title}}</strong>
+           
+         </div>
+       </ng-template>
+       <nice-tab title="AAA">
+         <h3>AAA</h3>
+         HTML
+       </nice-tab>
+       <nice-tab [title]="i" *ngFor="let i of [1,2,3,4]">
+         <h3>({{i}}) - BBB</h3>
+         HTML - {{title}}
+       </nice-tab>
+     </nice-tabs>
+     
+     
+     <!--<app-demo></app-demo>-->
     <!-- <nice-form-builder></nice-form-builder>-->
      
      

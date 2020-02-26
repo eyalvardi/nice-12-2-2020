@@ -1,0 +1,29 @@
+:host{
+    display: grid;
+    grid-template-rows: 30px auto;
+    margin: 20px;
+    padding: 8px;
+    grid-gap: 8px;
+    width: 80%;
+    height: 90vh;
+    border: 1px solid gainsboro;
+}
+.tabs{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 80px;
+    border: 1px solid green;
+    grid-gap: 8px;
+    align-items: center;
+}
+.tab{
+    border: 1px solid red;
+}
+.panel {
+    border: 1px solid gold;
+    margin: 8px;
+    padding: 8px;
+}
+.active {
+    background-color: yellow;
+}

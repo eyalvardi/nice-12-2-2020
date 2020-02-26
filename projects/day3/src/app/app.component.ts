@@ -32,12 +32,7 @@ import { tap } from "rxjs/operators";
     
   `,
   styles: [`
-    .ng-invalid{
-      border-right: 2px solid red;
-    }
-    .ng-valid{
-      border-right: 2px solid green;
-    }
+   
   `]
 })
 export class AppComponent implements OnInit{

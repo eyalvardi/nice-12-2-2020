@@ -7,10 +7,15 @@ import { tap } from "rxjs/operators";
   template: `
    <div>
      <h2>Day 3 NICE !!!!</h2>
+     
+     <nice-form-builder></nice-form-builder>
+     
+     
+     
      <div [formGroup]="myForm">
-       name  : <input type="text" formControlName="name">
-       age   : <input  formControlName="age">
-       email : <input  formControlName="email">
+       name  : <input formControlName="name">
+       age   : <input formControlName="age">
+       email : <input formControlName="email">
        cards:<br>
        <ng-container *ngFor="let fc of cardsFc.controls;last as l;index as i">
          <input [formControl]="fc">

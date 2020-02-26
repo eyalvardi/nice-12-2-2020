@@ -1,0 +1,20 @@
+{
+  "name": {
+    "id": "1",
+    "label": "name",
+    "value": "Eyal",
+    "type": "text"
+  },
+  "age": {
+    "id": "2",
+    "label": "age",
+    "value": "35",
+    "type": "number"
+  },
+  "email": {
+    "id": "3",
+    "label": "email",
+    "value": "Eyal@gamil.com",
+    "type": "email"
+  }
+}

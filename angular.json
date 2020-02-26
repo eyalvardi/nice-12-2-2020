@@ -254,6 +254,7 @@
             "aot": true,
             "assets": [
               "projects/day3/src/favicon.ico",
+              "projects/day3/src/app/form-builder/fields.json",
               "projects/day3/src/assets"
             ],
             "styles": [

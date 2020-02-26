@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from "@angular/forms";
 import { distinctUntilChanged, map, tap } from "rxjs/operators";
+import { FormBuilderService } from "../form-builder/form-builder.service";
 
 @Component({
   selector: 'app-demo',
@@ -23,15 +24,16 @@ export class DemoComponent implements OnInit {
   cars    = ['aaa','bbb','ccc'];
   subCars = [];
 
-  constructor() { }
+  constructor(private service : FormBuilderService ) { }
 
   ngOnInit(): void {
     this.myForm.valueChanges.pipe(
         map( value => value.car ),
         distinctUntilChanged(),
-        tap( car => {
+        tap( async car => {
           this.subCars.length = 0;
-          this.subCars = [ `1-${car}` , `2-${car}` , `3-${car}`  ]
+          await this.service.loadJson();
+          this.subCars = [ ...Object.keys(this.service.json)  ]
         })
     ).subscribe()
   }

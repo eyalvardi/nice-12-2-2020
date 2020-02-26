@@ -7,8 +7,8 @@ import { tap } from "rxjs/operators";
   template: `
    <div>
      <h2>Day 3 NICE !!!!</h2>
-     
-     <nice-form-builder></nice-form-builder>
+     <app-demo></app-demo>
+    <!-- <nice-form-builder></nice-form-builder>-->
      
      
      

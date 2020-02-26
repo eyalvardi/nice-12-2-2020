@@ -12,7 +12,7 @@ import { tap } from "rxjs/operators";
      
      
      
-     <div [formGroup]="myForm">
+     <!--<div [formGroup]="myForm">
        name  : <input formControlName="name">
        age   : <input formControlName="age">
        email : <input formControlName="email">
@@ -26,7 +26,7 @@ import { tap } from "rxjs/operators";
        <pre>
          {{myForm.value | json }}
        </pre>
-     </div>
+     </div>-->
    </div>
 
     

@@ -16,6 +16,7 @@ export class FormBuilderService {
   async loadJson(){
     this.json = await this.http.get<IGroupFildes>('./app/form-builder/fields.json')
         .toPromise();
+    this.buildFormGroup();
 
   }
   buildFormGroup(){

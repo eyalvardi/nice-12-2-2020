@@ -27,5 +27,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     justify-self: start;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.ng-valid {
+    border-right:3px solid greenyellow;
+}
+.ng-invalid {
+    border-right:3px solid red;
+}

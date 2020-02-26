@@ -19,13 +19,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ],
     imports : [
         CommonModule,
+        ReactiveFormsModule,
+
         NgMaterialModule,
-        MatInputModule,
-        MatButtonModule,
-        MatSelectModule,
-        MatRadioModule,
-        MatCardModule,
-        ReactiveFormsModule
+
     ],
     exports      : [
         TodoListComponent

@@ -14,8 +14,8 @@ export class TodoListService {
         task.isDone = inputElement.checked;
     }
 
-    addTask(desc: string){
-        const task = new TaskItem(desc);
+    addTask(desc: string,date:string){
+        const task = new TaskItem(desc, new Date(date) );
         this.tasks.push(task);
     }
     removeTask(task: TaskItem) {

@@ -5,6 +5,7 @@ export class TaskItem {
 
     constructor(
         public desc  : string,
+        public endDate : Date,
         public isDone:boolean = false) {
 
         this.id = count++;

@@ -6,8 +6,8 @@ import {TaskItem} from "./todo-list/src/models/task-item.class";
   template: `
     <div class="game">
 <!--       <hani-game></hani-game>-->
-      <nice-todo-list [tasks]="tasksList"></nice-todo-list>
-        <nice-my-table></nice-my-table>
+        <nice-todo-list [tasks]="tasksList"></nice-todo-list>
+<!--        <nice-my-table></nice-my-table>-->
     </div>    
   `,
   styles: [`

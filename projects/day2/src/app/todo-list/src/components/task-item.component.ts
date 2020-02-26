@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TodoListService} from "../..";
 import {TaskItem} from "../models/task-item.class";
-
+// date(task.endDate,'')
 @Component({
   selector: 'nice-task-item',
   template: `
     <input type="checkbox"
            (change)="ctrl.setDone(task,$event)"
            [checked]="task.isDone">
-    <span class="task-desc">{{task.desc}}</span>
+    <span class="task-desc">({{task.endDate | date:'M/d/yy' }}) - {{task.desc}}</span>
     <button (click)="ctrl.removeTask(task)">x</button>
   `,
   styles: [`

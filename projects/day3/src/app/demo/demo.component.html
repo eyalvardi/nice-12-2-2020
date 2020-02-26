@@ -4,7 +4,31 @@
         <mat-label>Name</mat-label>
         <input matInput formControlName="name">
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>Favorite car</mat-label>
+        <select matNativeControl formControlName="car" name="car">
+            <option value="" selected></option>
+            <option *ngFor="let car of cars;index as i" [value]="car">
+                ({{i}}) - {{car}}
+            </option>
+        </select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Favorite car</mat-label>
+        <select matNativeControl formControlName="subCar" name="car">
+            <option value="" selected></option>
+            <option *ngFor="let car of subCars;index as i" [value]="car">
+                ({{i}}) - {{car}}
+            </option>
+        </select>
+    </mat-form-field>
+
     <form formGroupName="myFiledGroup">
 
     </form>
 </form>
+<hr>
+<pre>
+    {{myForm.value | json }}
+</pre>

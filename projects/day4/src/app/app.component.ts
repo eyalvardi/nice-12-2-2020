@@ -19,12 +19,21 @@ import { Component } from '@angular/core';
             place-items: center;
         }
         .main-layout{
+            padding: 8px;
             display: grid;
             border: 1px solid darkgrey;
             grid-template-rows: 30px auto;
             grid-gap: 8px;
             width: 95%;
             height: 95vh;
+        }
+        .menu{
+            border-bottom: 1px solid darkgrey;
+            display: grid;
+            grid-gap: 8px;
+            grid-auto-flow: column;
+            grid-auto-columns: 100px;
+            justify-items: center;
         }
     `]
 })

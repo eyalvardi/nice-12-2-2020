@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
-import { UsersModule } from "./users/users.module";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -22,7 +21,6 @@ import { HttpClientModule } from "@angular/common/http";
 
 
         AppRoutingModule,
-        UsersModule
     ],
     providers: [],
     bootstrap: [AppComponent]

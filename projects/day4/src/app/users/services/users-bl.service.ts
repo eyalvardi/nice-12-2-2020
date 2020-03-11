@@ -10,10 +10,9 @@ export class UsersBlService {
 
   constructor( private proxy : UsersProxyService ) { }
 
-  getUsers(num:number){
-    this.proxy.getUsers(num).pipe(
-        tap( users => this.users = users)
-    ).subscribe();
+  async getUsers(num:number){
+    this.users = await this.proxy.getUsers(num).toPromise();
+    return  this.users;
   }
 
   getUserById(id:string) : nice.User {

@@ -8,6 +8,9 @@ import { UsersBlService } from "../services/users-bl.service";
     <div>
       <h3>user works! {{userId}}</h3>
       <pre>
+        {{params | json }}
+      </pre>
+      <pre>
         {{user | json }}
       </pre>
     </div>
@@ -17,6 +20,7 @@ import { UsersBlService } from "../services/users-bl.service";
 export class UserComponent implements OnInit {
   userId: string;
   user: nice.User;
+  params:any;
 
   constructor(
       private route : ActivatedRoute,
@@ -24,6 +28,7 @@ export class UserComponent implements OnInit {
       ) {
     route.params.subscribe(params=> {
       this.userId = params.id;
+      this.params = params;
       this.user   = this.userBl.getUserById(params.id);
     })
   }

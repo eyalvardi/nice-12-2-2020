@@ -6,7 +6,7 @@ import { UsersBlService } from "../services/users-bl.service";
     template: `
         <div class="users-layout">
             <div class="users-menu">                
-                <div *ngFor="let user of users" routerLinkActive="active-nav">
+                <div *ngFor="let user of users" routerLinkActive="active-nav" class="item-menu">
                     <img [src]="user.picture.thumbnail">
                     <a [routerLink]="[user.login.username]">{{user.name.first}} {{user.name.last}}</a>
                 </div>
@@ -29,6 +29,11 @@ import { UsersBlService } from "../services/users-bl.service";
           grid-auto-rows: 50px;
           grid-gap: 8px;
         }
+        .item-menu{
+            display: grid;
+            grid-template-columns: 50px auto;
+            grid-gap: 8px;
+        }
     `]
 })
 export class UsersComponent implements OnInit {
@@ -38,10 +43,11 @@ export class UsersComponent implements OnInit {
     }
 
     constructor(private userBl: UsersBlService) {
+        console.info(`users size = ${this.users.length}`);
     }
 
     ngOnInit(): void {
-        this.userBl.getUsers(8);
+        //this.userBl.getUsers(8);
     }
 
 }

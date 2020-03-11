@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UsersComponent } from './components/users.component';
 import { UserComponent } from './components/user.component';
 import { RouterModule } from "@angular/router";
+import { SecurityService } from "../login/security.service";
 
 
 @NgModule({
@@ -15,9 +16,13 @@ import { RouterModule } from "@angular/router";
         RouterModule.forChild([
             {
                 path: '',
+                canActivate         : [SecurityService],
+                canActivateChild    : [SecurityService],
+                resolve             : [SecurityService],
                 component: UsersComponent,
                 children : [
-                    { path : ':id' , component : UserComponent}
+                    { path : '' , redirectTo : 'no user' },
+                    { path : ':id' , component : UserComponent,canActivate : [SecurityService]}
                 ]
             }
         ])

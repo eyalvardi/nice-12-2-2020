@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
           <div class="menu">
               <a routerLink="/home" routerLinkActive="active-nav">Home</a>
               <a routerLink="/users" routerLinkActive="active-nav">Users</a>
+              <a [routerLink]="['/','users','123',{a:1,b:2}]" routerLinkActive="active-nav">Users</a>
           </div>
           <div>
               <router-outlet></router-outlet>

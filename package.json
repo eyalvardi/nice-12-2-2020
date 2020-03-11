@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "eyal": "npm run build && npm run start",
+    "compodoc": "npx compodoc -p projects/day4/tsconfig.app.json",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",

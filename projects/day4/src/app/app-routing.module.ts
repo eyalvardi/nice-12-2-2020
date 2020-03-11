@@ -26,8 +26,9 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes,{
-        useHash : true,
-        preloadingStrategy : QuicklinkStrategy
+        useHash             : true,
+        preloadingStrategy  : QuicklinkStrategy,
+        enableTracing       : false
     })],
     exports: [RouterModule]
 })
